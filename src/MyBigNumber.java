@@ -43,8 +43,8 @@ public class MyBigNumber {
         char c2 = '0';
         
         Pattern pattern = Pattern.compile("\\D"); // Chuỗi đại diện cho kí tự số từ [0-9]
-        final Matcher isError1 = pattern.matcher(num1);// biến để lưu dữ kết quả xét chuỗi s1 
-        final Matcher isError2 = pattern.matcher(num2);;// biến để lưu dữ kết quả xét chuỗi s2
+        final Matcher Err1 = pattern.matcher(num1);// biến để lưu dữ kết quả xét chuỗi s1 
+        final Matcher Err2 = pattern.matcher(num2);;// biến để lưu dữ kết quả xét chuỗi s2
 
         // Bắt lỗi dữ liệu nhập vào nếu có
         // Nếu chuỗi chưa nhập vào thì tính là 0 ( trường hợp Null )
@@ -68,14 +68,14 @@ public class MyBigNumber {
         }
 
         // Nếu nhập vào kí tự đặc biệt thì không tính và báo lỗi
-        if (isError1.find()) {
-            vtri = isError1.start() + 1;
+        if (Err1.find()) {
+            pos = Err1.start() + 1;
             this.ireceiver.send("Vị trí " + vtri + " trong chuỗi " + num1 + " không phải số");
             throw new NumberFormatException(vtri + "");
         }
 
-        if (isError2.find()) {
-            vtri = isError2.start() + 1;
+        if (Err2.find()) {
+            pos = Err2.start() + 1;
             this.ireceiver.send("Vị trí " + vtri + " trong chuỗi " + num2 + " không phải số");
             throw new NumberFormatException(vtri + "");
 
