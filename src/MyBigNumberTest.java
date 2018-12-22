@@ -22,7 +22,7 @@ public class MyBigNumberTest implements IReceiver {
         
         MyBigNumber mybignumber = new MyBigNumber();
         System.out.println("Case 1:\n");
-        mybignumber.sum("99", "999");
+        mybignumber.sum("999", "999");
 		
     }
 
