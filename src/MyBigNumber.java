@@ -1,5 +1,8 @@
 
-import java.util.ArrayList;
+
+
+
+
 
 /**
  * Sum two string class.
@@ -28,13 +31,18 @@ public class MyBigNumber {
         
         int[] num4 = new int[s2.length()];
         int[] num3 = new int[s1.length()];
+        int vtri;
         int num;
         int ghi;
         String s = "";
-        s += s1 + "+" + s2;
-        int num1 = 0;// dùng để ghép các chữ số lại thành 1 số
+        
+        
+        int num1 = 0; // dùng để ghép các chữ số lại thành 1 số
+        
         int num2 = 0;
+        
         int temp2 = 0;
+        int temp1 = 0;
         
         int tmp1 = 1;  // biến tạm để đưa các chữ số thành 1 số hoàn chỉnh
         int tmp2 = 1;
@@ -43,41 +51,46 @@ public class MyBigNumber {
         char c2 = '0';
         
         Pattern pattern = Pattern.compile("\\D"); // Chuỗi đại diện cho kí tự số từ [0-9]
-        final Matcher Err1 = pattern.matcher(num1);// biến để lưu dữ kết quả xét chuỗi s1 
-        final Matcher Err2 = pattern.matcher(num2);;// biến để lưu dữ kết quả xét chuỗi s2
+        final Matcher isError1 = pattern.matcher(s1);// biến để lưu dữ kết quả xét chuỗi s1 
+        final Matcher isError2 = pattern.matcher(s2);;// biến để lưu dữ kết quả xét chuỗi s2
 
         // Bắt lỗi dữ liệu nhập vào nếu có
-        // Nếu chuỗi chưa nhập vào thì tính là 0 ( trường hợp Null )
-        if (num1.isEmpty()) {
-            num1 = "0";
-        }
-
-        if (num2.isEmpty()) {
-            num2 = "0";        
-        }
+        
+        
 
         // Nếu số nhập vào là âm thì không tính và báo lỗi
-        if (num1.charAt(0) == '-') {
-            this.ireceiver.send("Không được nhập số âm : " + num1);
-            throw new NumberFormatException("Bạn vui lòng không nhập số âm : " + num1);
+        
+        
+        
+        if (s1.charAt(0) == '-') {
+            this.ireceiver.send("Không được nhập số âm : " + s1);
+            
+            //throw new NumberFormatException("Bạn vui lòng không nhập số âm : " + s1);
         }
+        
 
-        if (num2.charAt(0) == '-') {
-            ireceiver.send("Không được nhập số âm : " + num2);
-            throw new NumberFormatException("Bạn vui lòng không nhập số âm : " + num2);
+        if (s2.charAt(0) == '-') {
+            ireceiver.send("Không được nhập số âm : " + s2);
+            
+            //throw new NumberFormatException("Bạn vui lòng không nhập số âm : " + s2);
         }
+        
+        
 
         // Nếu nhập vào kí tự đặc biệt thì không tính và báo lỗi
-        if (Err1.find()) {
-            pos = Err1.start() + 1;
+        
+        if (isError1.find()) {
+            vtri = isError1.start() + 1;
             this.ireceiver.send("Vị trí " + vtri + " trong chuỗi " + num1 + " không phải số");
-            throw new NumberFormatException(vtri + "");
+            
+            //throw new NumberFormatException(vtri + "");
         }
 
-        if (Err2.find()) {
-            pos = Err2.start() + 1;
+        if (isError2.find()) {
+            vtri = isError2.start() + 1;
             this.ireceiver.send("Vị trí " + vtri + " trong chuỗi " + num2 + " không phải số");
-            throw new NumberFormatException(vtri + "");
+            
+            //throw new NumberFormatException(vtri + "");
 
         }
         
@@ -110,7 +123,7 @@ public class MyBigNumber {
         
         
         int j;
-        for (i = max - 2,j = 1; i >= 0;j++,i--) {
+        for (i = max - 3,j = 1; i >= 0;j++,i--) {
             num = num3[i] + num4[i];
             temp1 =  num % 10;
             if (temp2 == 0) {
@@ -125,12 +138,15 @@ public class MyBigNumber {
     
         }
         if (temp2 > 0) {
-            s += "\n" + "Buoc " + (i) + ": " + "lay " + 0 + ", cong " + 0 + ", nho " 
+            s += "\n" + "Buoc " + j + ": " + "lay " + 0 + ", cong " + 0 + ", nho " 
                 + 1 + ", bang " + 1 + ", viet " + 1 + "\n";
         }
-        String result = "" + (num1 + num2) ;
     
-        return result;
+        
+        s += String.format("%d",(num1 + num2));
+        
+        
+        return s;
     }
     
 }
