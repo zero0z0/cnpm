@@ -5,4 +5,4 @@ https://drive.google.com/open?id=1xhSyIcQHCeFhdAXIt1bXAeWXj7jMejPp
 
 *How to run :
 
-Download sum2num.jar and run
+Download sum2num.jar and run sum2num.jar
