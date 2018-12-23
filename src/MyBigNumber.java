@@ -1,7 +1,4 @@
-
-
-
-
+﻿
 
 
 /**
@@ -54,43 +51,36 @@ public class MyBigNumber {
         final Matcher isError1 = pattern.matcher(s1);// biến để lưu dữ kết quả xét chuỗi s1 
         final Matcher isError2 = pattern.matcher(s2);;// biến để lưu dữ kết quả xét chuỗi s2
 
-        // Bắt lỗi dữ liệu nhập vào nếu có
-        
-        
-
-        // Nếu số nhập vào là âm thì không tính và báo lỗi
+        // Nếu số nhập vào là âm thì báo lỗi
         
         
         
         if (s1.charAt(0) == '-') {
             this.ireceiver.send("Không được nhập số âm : " + s1);
             
-            //throw new NumberFormatException("Bạn vui lòng không nhập số âm : " + s1);
         }
         
 
         if (s2.charAt(0) == '-') {
             ireceiver.send("Không được nhập số âm : " + s2);
             
-            //throw new NumberFormatException("Bạn vui lòng không nhập số âm : " + s2);
         }
         
         
 
-        // Nếu nhập vào kí tự đặc biệt thì không tính và báo lỗi
+        // Nếu nhập vào kí tự đặc biệt thì báo lỗi
         
         if (isError1.find()) {
             vtri = isError1.start() + 1;
             this.ireceiver.send("Vị trí " + vtri + " trong chuỗi " + num1 + " không phải số");
             
-            //throw new NumberFormatException(vtri + "");
         }
 
         if (isError2.find()) {
             vtri = isError2.start() + 1;
             this.ireceiver.send("Vị trí " + vtri + " trong chuỗi " + num2 + " không phải số");
             
-            //throw new NumberFormatException(vtri + "");
+            
 
         }
         
