@@ -99,7 +99,7 @@ public class MyBigNumberTest implements IReceiver{
         
         System.out.println("Test 6 :");
         String str1 = "0";
-        String str2 = null;
+        String str2 = "123";
         MyBigNumberTest test = new MyBigNumberTest();
         MyBigNumber mybignumber = new MyBigNumber(test);
         String result = mybignumber.sum(str1, str2);
@@ -148,17 +148,7 @@ public class MyBigNumberTest implements IReceiver{
         test.send(result);
     }
     
-    @Test
-    public void test10() {
-        
-        System.out.println("Test 10 :");
-        String str1 = " ";
-        String str2 = " ";
-        MyBigNumberTest test = new MyBigNumberTest();
-        MyBigNumber mybignumber = new MyBigNumber(test);
-        String result = mybignumber.sum(str1, str2);
-        test.send(result);
-    }
+    
     
     
     @Override
