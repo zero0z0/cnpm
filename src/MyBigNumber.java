@@ -1,4 +1,4 @@
-import java.util.regex.Matcher;
+﻿import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
@@ -115,7 +115,7 @@ public class MyBigNumber {
             num = (c1 - '0') + (c2 - '0');
             tong = Integer.toString(num % 10) + tong;
     
-            //s+=tong;
+    
             temp1 =  num % 10;
             if (temp2 == 0) {
                 s += "buoc" + i + ":" + "lay" + c1 + " cong " + c2 + " duoc " 
