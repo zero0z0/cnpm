@@ -40,8 +40,8 @@ public class MyBigNumberTest implements IReceiver{
         
             System.out.println("Test 2 :");
             String str1 = "99";
-            String str2 = "99";
-            String expResult = "198";
+            String str2 = "200";
+            String expResult = "299";
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String result = mybignumber.sum(str1, str2);
@@ -68,7 +68,7 @@ public class MyBigNumberTest implements IReceiver{
         try {
             System.out.println("Test 4 :");
             String str1 = "99";
-            String str2 = "999a";            
+            String str2 = "54a";            
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String result = mybignumber.sum(str1, str2);   
@@ -84,7 +84,7 @@ public class MyBigNumberTest implements IReceiver{
         try {
             System.out.println("Test 5 :");
             String str1 = "132";
-            String str2 = "455)";
+            String str2 = "1235)";
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String result = mybignumber.sum(str1, str2);
@@ -98,7 +98,7 @@ public class MyBigNumberTest implements IReceiver{
     public void test6() {
         
         System.out.println("Test 6 :");
-        String str1 = "0";
+        String str1 = "042";
         String str2 = "123";
         MyBigNumberTest test = new MyBigNumberTest();
         MyBigNumber mybignumber = new MyBigNumber(test);
@@ -126,7 +126,7 @@ public class MyBigNumberTest implements IReceiver{
        
         try {
             System.out.println("Test 8 :");
-            String str1 = "-32";
+            String str1 = "-2";
             String str2 = "45";
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
