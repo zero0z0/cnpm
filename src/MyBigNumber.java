@@ -134,10 +134,7 @@ public class MyBigNumber {
         }
         
         s += "\n" + "ket qua: " + tong;
-        
-        //s += String.format("%d",(num1 + num2));
-        
-        
+    
         return s;
     }
     
